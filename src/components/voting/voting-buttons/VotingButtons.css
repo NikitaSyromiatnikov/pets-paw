@@ -1,0 +1,33 @@
+.voting-buttons-container {
+    position: absolute;
+    display: flex;
+    bottom: -40px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.voting-button {
+    margin: 2px;
+    width: 80px;
+    height: 80px;
+    outline: none;
+    border-style: none;
+    cursor: pointer;
+}
+
+.first {
+    border-radius: 20px 0 0 20px;
+    background-color: #97EAB9;
+}
+
+.middle {
+    margin: 2px 1px 2px 0px;
+    background-color: #FF868E;
+}
+
+.last {
+    border-radius: 0 20px 20px 0;
+    background-color: #FFD280;
+}

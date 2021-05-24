@@ -1,0 +1,120 @@
+.sidebar {
+    position: fixed;
+    top: 30px;
+    left: 145px;
+    min-width: 280px;
+}
+
+.sidebar-text {
+    margin-top: 80px;
+}
+
+.sidebar-text-title {
+    font-size: 44px;
+    font-weight: 500;
+}
+
+.sidebar-text-subtitle {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #8C8C8C;
+}
+
+.sidebar-text-text {
+    margin-top: 60px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar-links {
+    display: flex;
+    margin-top: 20px;
+}
+
+.sidebar-link {
+    margin: 0 8px 0 8px;
+    text-align: center;
+}
+
+.sidebar-link-image-container {
+    height: 198px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    transition: 200ms;
+}
+
+.sidebar-link:nth-child(1) .sidebar-link-image-container {
+    background: #B4B7FF;
+}
+
+.sidebar-link:nth-child(2) .sidebar-link-image-container {
+    background: #97EAB9;
+}
+
+.sidebar-link:nth-child(3) .sidebar-link-image-container {
+    background: #FFD280;
+}
+
+.sidebar-link-label {
+    margin-top: 10px;
+    width: 138px;
+    height: 36px;
+    line-height: 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FF868E;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    transition: 200ms;
+}
+
+.sidebar-link:hover .sidebar-link-image-container {
+    border: 4px solid #FFFFFF;
+}
+
+.sidebar-link:hover .sidebar-link-label {
+    background-color: #FBE0DC;
+}
+
+.sidebar-link.active .sidebar-link-image-container {
+    border: 4px solid #FBE0DC;
+}
+
+.sidebar-link.active .sidebar-link-label {
+    color: #FFFFFF;
+    background-color: #FF868E;
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .sidebar {
+        left: 50%;
+        transform: translate(-50%);
+        margin-left: 0;
+    }    
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .sidebar {
+        left: 50%;
+        transform: translate(-50%);
+        margin-left: 0;
+    } 
+    
+    .sidebar-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sidebar-link-label {
+        width: 100%;
+    }
+
+    .sidebar-link-image-container {
+        display: none;
+    }
+}

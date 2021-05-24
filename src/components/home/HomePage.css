@@ -1,0 +1,19 @@
+.home {
+    margin: 30px 30px 0 auto;
+    width: 680px;
+    height: 840px;
+    background: #FBE0DC;
+    border-radius: 20px;
+}
+
+.home-image {
+    width: 775px;
+    margin-left: -65px;
+    margin-top: -90px;
+}
+
+@media (min-width: 1px) and (max-width: 1350px) {
+    .home {
+        display: none;
+    }    
+}

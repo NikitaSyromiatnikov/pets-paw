@@ -1,0 +1,13 @@
+.activity-loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 52px;
+    margin-bottom: 10px;
+}
+
+.activity-loader {
+    width: 640px;
+    height: 70px;
+}

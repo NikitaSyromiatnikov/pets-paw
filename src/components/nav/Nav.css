@@ -1,0 +1,23 @@
+.navbar {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: 30px;
+    width: 680px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px 0 5px;
+    width: 60px;
+    height: 60px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
