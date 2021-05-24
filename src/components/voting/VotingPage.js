@@ -23,7 +23,7 @@ const VotingPage = ({ isLoading, image, error, dispatch }) => {
         <div className="wrapper">
             <Nav />
             <div className="voting">
-                <BackLink base="voting" label="voting" />
+                <BackLink base="/voting" label="voting" />
                 {isLoading && <ImageLoader />}
                 {error && <ImageLoadError message={error} />}
                 {!isLoading && image && <VotingImage image={image[0]} />}

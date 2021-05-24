@@ -20,4 +20,25 @@
     height: 60px;
     background-color: #FFFFFF;
     border-radius: 20px;
+    transition: 200ms;
+}
+
+.nav-link-image {
+    transition: 200ms;
+}
+
+.nav-link.active {
+    background-color: #FF868E;
+}
+
+.nav-link.active:hover .nav-link-image {
+    filter: brightness(1);
+}
+
+.nav-link.active .nav-link-image {
+    filter: brightness(10);
+}
+
+.nav-link:hover {
+    background-color: #FBE0DC;
 }

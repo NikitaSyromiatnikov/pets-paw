@@ -21,7 +21,7 @@ const NavLink = ({ image, to, alt }) => {
 
     return (
         <Link className={`nav-link ${active() ? "active" : ""}`} to={to}>
-            <img src={image} alt={alt}></img>
+            <img className="nav-link-image" src={image} alt={alt}></img>
         </Link>
     );
 }

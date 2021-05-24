@@ -11,6 +11,19 @@
     height: 40px;
     background-color: #FBE0DC;
     border-radius: 10px;
+    transition: 200ms;
+}
+
+.back-link-image-wrapper:hover {
+    background-color: #FF868E;
+}
+
+.back-link-image {
+    transition: 200ms;
+}
+
+.back-link-image-wrapper:hover .back-link-image {
+    filter: brightness(10);
 }
 
 .back-link-label {

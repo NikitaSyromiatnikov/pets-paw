@@ -7,5 +7,6 @@
 
 .voting-image {
     width: 100%;
+    min-height: 360px;
     border-radius: 20px;
 }

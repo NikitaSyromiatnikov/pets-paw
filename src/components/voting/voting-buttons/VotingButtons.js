@@ -7,6 +7,7 @@ import dislike from './images/dislike.svg';
 import favourite from './images/favourite.svg';
 
 import { connect } from 'react-redux';
+import { requestVotingImage } from '../../../redux/actions/votingActions';
 import { addNewActivity } from '../../../redux/actions/activityActions';
 
 const VotingButtons = ({ id, dispatch }) => {
@@ -41,9 +42,20 @@ const VotingButtons = ({ id, dispatch }) => {
             .catch(err => { console.log(err) });
     }
 
-    const likeImage = () => voteImage(id, 'default', 1);
-    const dislikeImage = () => voteImage(id, 'default', 0);
-    const saveImage = () => addImageToFavourites(id, 'default');
+    const likeImage = () => {
+        voteImage(id, 'default', 1);
+        dispatch(requestVotingImage());
+    };
+
+    const dislikeImage = () => {
+        voteImage(id, 'default', 0);
+        dispatch(requestVotingImage());
+    };
+
+    const saveImage = () => {
+        addImageToFavourites(id, 'default');
+        dispatch(requestVotingImage());
+    };
 
     return (
         <div className="voting-buttons-container">

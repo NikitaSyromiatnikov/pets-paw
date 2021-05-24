@@ -28,6 +28,7 @@ export default function votingReducer(state = initialVotingState, action) {
             return {
                 ...state,
                 isLoading: true,
+                image: null,
             };
 
         case VOTING_IMAGE_SUCCESS:

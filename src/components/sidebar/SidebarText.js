@@ -1,5 +1,5 @@
-/*
-*   A simple component to render text
+/** 
+*   @returns a simple component to render text
 *
 *   Has no params
 *      
@@ -8,9 +8,9 @@
 *   Application state
 */
 const SidebarText = () => {
-    const title = 'Hello intern!';
-    const subtitle = 'Welcome to MSI Frontend test 2021'
-    const text = 'Lets start using The Dogs Api';
+    const title = 'Hello!';
+    const subtitle = `It's just a pet project. React Redux`;
+    const text = 'Lets start using The Dogs Api';   
 
     return (
         <div className="sidebar-text">

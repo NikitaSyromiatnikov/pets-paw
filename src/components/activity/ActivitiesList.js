@@ -26,7 +26,7 @@ const ActivitiesList = ({ page, pages, items, activities, dispatch }) => {
             <div className="activities-pagination">
                 <div className="activities-pages">
                     <button className="activity-pages-button" onClick={decrement}>
-                        <img src={back} alt='back'></img>
+                        <img className="activity-button-front" src={back} alt='back'></img>
                     </button>
                     <div className="activity-pages-current">{page} / {pages}</div>
                     <button className="activity-pages-button" onClick={increment}>

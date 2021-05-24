@@ -14,6 +14,10 @@
     border-radius: 20px;
 }
 
+.search-input:not(:placeholder-shown) {
+    border: 2px solid #FBE0DC;
+}
+
 .search-button {
     position: absolute;
     display: flex;
@@ -26,5 +30,19 @@
     background-color: #FBE0DC;
     outline: none;
     border-style: none;
+    cursor: pointer;
     border-radius: 10px;
+    transition: 200ms;
+}
+
+.search-button:hover {
+    background-color: #FF868E;
+}
+
+.search-button-image {
+    transition: 200ms;
+}
+
+.search-button:hover .search-button-image {
+    filter: brightness(10);
 }
