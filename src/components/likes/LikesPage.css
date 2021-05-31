@@ -1,0 +1,82 @@
+.liked-images {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: calc(100vh - 220px);
+    overflow: scroll;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.liked-image-container {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 200px;
+    height: 160px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    z-index: 101;
+}
+
+.liked-image-container:nth-child(3n - 1) {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.liked-image {
+    display: block;
+    width: 100%;
+    transform: scale(1.8, 1.8);
+    -ms-transform: scale(1.8, 1.8);
+    -webkit-transform: scale(1.8, 1.8);
+    z-index: 0;
+}
+
+.image-delete {
+    position: absolute;
+    width: 100%;
+    height: 160px;
+    border-radius: 20px;
+    transition: 200ms;
+    z-index: 1;
+}
+
+.liked-image-container:hover .image-delete-button {
+    background-color: #FFFFFF;
+}
+
+.liked-image-container:hover .liked-image {
+    filter: blur(1px);
+}
+
+.liked-image-container:hover .image-delete-button-image {
+    display: block;
+}
+
+.image-delete-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+    top: 10px;
+    width: 36px;
+    height: 36px;
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 200ms;
+    z-index: 1;
+}
+
+.image-delete-button:hover {
+    background-color: tomato;
+}
+
+.image-delete-button-image {
+    display: none;
+}

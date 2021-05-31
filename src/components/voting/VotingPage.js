@@ -6,8 +6,10 @@ import Activity from '../activity/Activity';
 import ImageLoader from '../loader/ImageLoader';
 import ImageLoadError from '../error/ImageLoadError';
 import VotingImage from './voting-image/VotingImage';
+import LikesPage from '../likes/LikesPage';
 
 import { connect } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
 import { requestVotingImage, votingImageSuccess, votingImageFailure } from '../../redux/actions/votingActions';
 
 import axios from 'axios';
@@ -23,19 +25,26 @@ const VotingPage = ({ isLoading, image, error, dispatch }) => {
         <div className="wrapper">
             <Nav />
             <div className="voting">
-                <BackLink base="/voting" label="voting" />
-                {isLoading && <ImageLoader />}
-                {error && <ImageLoadError message={error} />}
-                {!isLoading && image && <VotingImage image={image[0]} />}
-                <Activity />
+                <Switch>
+                    <Route exact path="/voting">
+                        <BackLink base="/voting" label="voting" />
+                        {isLoading && <ImageLoader />}
+                        {error && <ImageLoadError message={error} />}
+                        {!isLoading && image && <VotingImage image={image[0]} />}
+                        <Activity />
+                    </Route>
+                    <Route path="/voting/likes">
+                        <LikesPage />
+                    </Route>
+                </Switch>
             </div>
         </div>
     );
 }
 
 const fetchData = (dispatch) => {
+    const config = { header: { 'x-api-token': 'd6269168-7769-4775-8912-dad584ad6b69' } };
     const url = 'https://api.thedogapi.com/v1/images/search';
-    const config = { 'X-Api-Key': 'd6269168-7769-4775-8912-dad584ad6b69' };
 
     dispatch(requestVotingImage());
 
