@@ -1,32 +1,32 @@
-import './LikesPage.css';
+import './DislikesPage.css';
 
 import BackLink from '../back/BackLink';
-import LikedImages from './LikedImages';
+import DislikedImages from './DislikedImages';
 import ActionsLoader from '../loader/ActionsLoader';
 
 import { connect } from 'react-redux';
 import { fetchActionsData, fetchActionsImages } from '../../api/client';
 
-const LikesPage = ({ isLoading, actions, images, error, dispatch }) => {
+const DislikesPage = ({ isLoading, actions, images, error, dispatch }) => {
     if (isLoading && !actions)
         fetchActionsData(dispatch);
 
     if (isLoading && actions && !error)
         fetchActionsImages(actions, dispatch);
 
-    const filterLikedImages = () => {
-        const likedImages = [];
+    const filterDislikedImages = () => {
+        const dislikedImages = [];
 
         for (let i = 0; i < actions.length; i++) {
             let image = {};
 
-            if (actions[i].value === 1) {
+            if (actions[i].value === 0) {
                 image = images.find(image => image.id === actions[i].image_id);
-                likedImages.push({ image: image, vote_id: actions[i].id });
+                dislikedImages.push({ image: image, vote_id: actions[i].id });
             }
         }
 
-        return likedImages;
+        return dislikedImages;
     }
 
     const requestUpdate = () => {
@@ -35,9 +35,9 @@ const LikesPage = ({ isLoading, actions, images, error, dispatch }) => {
 
     return (
         <div className="container">
-            <BackLink base="/voting" label="LIKES" refresh={true} refreshFunction={requestUpdate}/>
+            <BackLink base="/voting" label="DISLIKES" refresh={true} refreshFunction={requestUpdate} />
             {isLoading && <ActionsLoader />}
-            {!isLoading && <LikedImages images={filterLikedImages()} />}
+            {!isLoading && <DislikedImages images={filterDislikedImages()} />}
         </div>
     );
 }
@@ -49,4 +49,4 @@ const mapStateToProps = (state) => ({
     error: state.actions.error
 })
 
-export default connect(mapStateToProps)(LikesPage);
+export default connect(mapStateToProps)(DislikesPage);

@@ -3,7 +3,7 @@ import cross from './images/delete.svg';
 import { useDispatch } from "react-redux";
 import { fetchDeleteVote } from '../../api/client';
 
-const LikedImage = ({ image, vote_id }) => {
+const DislikedImage = ({ image, vote_id }) => {
     const dispatch = useDispatch();
 
     const deleteImage = () => { fetchDeleteVote(vote_id, dispatch); }
@@ -20,4 +20,4 @@ const LikedImage = ({ image, vote_id }) => {
     );
 }
 
-export default LikedImage;
+export default DislikedImage;

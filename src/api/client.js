@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { requestActions, actionsSuccess, actionsFailure, requstActionsImages, actionsImagesSuccess, actionsImagesFailure } from '../redux/actions/actionsActions';
+import { requestActions, actionsSuccess, actionsFailure, requstActionsImages, actionsImagesSuccess, actionsImagesFailure, requestDeleteVote, deleteVoteSuccess, deleteVoteFailure } from '../redux/actions/actionsActions';
 
 axios.interceptors.request.use(req => {
     req.baseURL = 'https://api.thedogapi.com/v1';
@@ -45,8 +45,16 @@ export const fetchActionsImages = (actions, dispatch) => {
                 images.push({ id: res[i].data.id, url: res[i].data.url });
 
             dispatch(actionsImagesSuccess(images));
-        })
+        })  
         .catch(error => {
             dispatch(actionsImagesFailure(error));
         });
+}
+
+export const fetchDeleteVote = (vote_id, dispatch) => {
+    dispatch(requestDeleteVote(vote_id));
+
+    axios.delete(`/votes/${vote_id}`)
+        .then(res => dispatch(deleteVoteSuccess(vote_id)))
+        .catch(error => dispatch(deleteVoteFailure('Could not delete vote')));
 }

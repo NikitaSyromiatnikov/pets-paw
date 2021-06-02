@@ -5,6 +5,9 @@ import {
     REQUEST_ACTIONS_IMAGES,
     ACTIONS_IMAGES_SUCCESS,
     ACTIONS_IMAGES_FAILURE,
+    REQUEST_DELETE_VOTE,
+    DELETE_VOTE_SUCCESS,
+    DELETE_VOTE_FAILURE
 } from './actionsActions.d';
 
 export const requestActions = () => ({ type: REQUEST_ACTIONS });
@@ -38,3 +41,24 @@ export const actionsImagesFailure = (error) => ({
         error: error
     }
 });
+
+export const requestDeleteVote = (vote_id) => ({
+    type: REQUEST_DELETE_VOTE,
+    payload: {
+        vote_id: vote_id
+    }
+})
+
+export const deleteVoteSuccess = (vote_id) => ({
+    type: DELETE_VOTE_SUCCESS,
+    payload: {
+        vote_id: vote_id
+    }
+})
+
+export const deleteVoteFailure = (error) => ({
+    type: DELETE_VOTE_FAILURE,
+    payload: {
+        error: error
+    }
+})

@@ -73,10 +73,6 @@
     z-index: 1;
 }
 
-.image-delete-button:hover {
-    background-color: tomato;
-}
-
 .image-delete-button-image {
     display: none;
 }

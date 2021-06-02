@@ -7,6 +7,7 @@ import ImageLoader from '../loader/ImageLoader';
 import ImageLoadError from '../error/ImageLoadError';
 import VotingImage from './voting-image/VotingImage';
 import LikesPage from '../likes/LikesPage';
+import DislikesPage from '../dislikes/DislikesPage';
 
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -35,6 +36,9 @@ const VotingPage = ({ isLoading, image, error, dispatch }) => {
                     </Route>
                     <Route path="/voting/likes">
                         <LikesPage />
+                    </Route>
+                    <Route path="/voting/dislikes">
+                        <DislikesPage />
                     </Route>
                 </Switch>
             </div>
